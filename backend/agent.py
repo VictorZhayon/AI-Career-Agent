@@ -1,6 +1,8 @@
 import google.generativeai as genai
 import os
 from .prompts import RESUME_PROMPT, COVER_LETTER_PROMPT
+from dotenv import load_dotenv
+load_dotenv()
 
 class CareerAgent:
     def __init__(self):

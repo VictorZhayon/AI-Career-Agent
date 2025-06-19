@@ -20,45 +20,44 @@ except Exception as e:
 
 # UI Configuration
 st.set_page_config(
-    page_title="Career Agent MVP",
+    page_title="AI Career Agent",
     layout="wide",
     page_icon="💼"
 )
 
 # Custom CSS
-st.markdown("""
-<style>
-    .stProgress > div > div > div > div {
-        background-color: #1DA1F2;
-    }
-    .stTextArea [data-baseweb=base-input] {
-        background-color: #F8F9FA;
-    }
-    .stDownloadButton button {
-        width: 100%;
-    }
-    .section-header {
-        border-bottom: 2px solid #1DA1F2;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1rem;
-    }
-    .feature-card {
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        background: white;
-    }
-</style>
-""", unsafe_allow_html=True)
+# st.markdown("""
+# <style>
+#     .stProgress > div > div > div > div {
+#         background-color: #1DA1F2;
+#     }
+#     .stTextArea [data-baseweb=base-input] {
+#         background-color: #F8F9FA;
+#     }
+#     .stDownloadButton button {
+#         width: 100%;
+#     }
+#     .section-header {
+#         border-bottom: 2px solid #1DA1F2;
+#         padding-bottom: 0.5rem;
+#         margin-bottom: 1rem;
+#     }
+#     .feature-card {
+#         border-radius: 10px;
+#         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+#         padding: 1.5rem;
+#         margin-bottom: 1.5rem;
+#         background: white;
+#     }
+# </style>
+# """, unsafe_allow_html=True)
 
 # Header
-col1, col2 = st.columns([1, 3])
-with col1:
-    st.image("https://via.placeholder.com/150/1DA1F2/FFFFFF?text=CA", width=150)
-with col2:
-    st.title("Career Agent MVP")
+col = st.columns(1)
+with col[0]:
+    st.title("🛠 AI Career Agent")
     st.caption("Gemini-powered job application assistant - Transform resumes, generate cover letters, and land your dream job")
+    st.caption("Built with ❤️ by Victor Zion | Version 1.0 | MVP Release")
 
 # Feature Tabs
 tab1, tab2 = st.tabs(["📝 Resume Transformer", "✉️ Cover Letter Generator"])
@@ -139,14 +138,14 @@ with tab1:
             )
             
         # Feedback mechanism
-        st.subheader("How did we do?")
-        feedback = st.radio(
-            "Quality of optimization:",
-            ["Excellent", "Good", "Needs improvement"],
-            horizontal=True
-        )
-        if st.button("Submit Feedback"):
-            st.success("Thank you for your feedback! We'll use this to improve Career Agent")
+        # st.subheader("How did we do?")
+        # feedback = st.radio(
+        #     "Quality of optimization:",
+        #     ["Excellent", "Good", "Needs improvement"],
+        #     horizontal=True
+        # )
+        # if st.button("Submit Feedback"):
+        #     st.success("Thank you for your feedback! We'll use this to improve Career Agent")
     
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -240,7 +239,7 @@ with tab2:
         # Personalization options
         if st.button("🔄 Regenerate with Different Tone"):
             st.session_state.pop('cover_letter', None)
-            st.experimental_rerun()
+            st.rerun()
     
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -250,9 +249,9 @@ with st.sidebar:
     
     # API status
     if os.getenv("GEMINI_API_KEY"):
-        st.success("Gemini API Connected")
+        st.success("Gemini Engaged")
     else:
-        st.error("Gemini API Key Missing")
+        st.error("Gemini Disengaged")
     
     # Resume info
     if st.session_state.resume_text:
@@ -274,14 +273,14 @@ with st.sidebar:
     st.markdown("- AI-generated personalized cover letters")
     st.markdown("- Job description analysis")
     
-    st.divider()
-    st.markdown("**Next Phase Features:**")
-    st.markdown("- STAR interview preparation")
-    st.markdown("- LinkedIn profile optimization")
-    st.markdown("- Salary negotiation scripts")
+    # st.divider()
+    # st.markdown("**Next Phase Features:**")
+    # st.markdown("- STAR interview preparation")
+    # st.markdown("- LinkedIn profile optimization")
+    # st.markdown("- Salary negotiation scripts")
 
 # Footer
 st.divider()
 footer_cols = st.columns(3)
 with footer_cols[1]:
-    st.caption("© 2024 Career Agent MVP | Powered by Google Gemini")
+    st.caption("© 2024 AI Career Agent | Powered by Google Gemini | Created by Victor Zion with ❤️ and ☕")
