@@ -1,0 +1,25 @@
+career_agent_mvp/
+├── .env                    # Environment variables (GEMINI_API_KEY)
+├── .gitignore
+├── README.md               # Setup/usage instructions
+├── requirements.txt        # Dependencies
+├── Dockerfile              # Container configuration
+│
+├── backend/                # Core AI functionality
+│   ├── __init__.py
+│   ├── agent.py            # CareerAgent class with Gemini integration
+│   ├── prompts.py          # Prompt templates and engineering
+│   └── utils.py            # Helper functions (PDF parsing, etc.)
+│
+├── frontend/               # Streamlit UI implementation
+│   ├── __init__.py
+│   ├── app.py              # Main Streamlit application
+│   ├── components.py       # Reusable UI components
+│   └── assets/             # Static files
+│       ├── styles.css      # Custom styles (optional)
+│       └── logo.png        # App logo
+│
+└── tests/                  # Test suite
+    ├── __init__.py
+    ├── test_agent.py       # Unit tests for backend
+    └── test_frontend.py    # UI and integration tests
