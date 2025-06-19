@@ -123,9 +123,9 @@ with tab1:
         st.subheader("Optimized Resume", divider="blue")
         
         # Download button with filename
-        filename = f"optimized_resume_{datetime.now().strftime('%Y%m%d')}.txt"
+        filename = f"AI_Career_Agent_Optimized_Resume{datetime.now().strftime('%Y%m%d')}.pdf"
         b64 = base64.b64encode(st.session_state.transformed_resume.encode()).decode()
-        href = f'<a href="data:file/txt;base64,{b64}" download="{filename}">⬇️ Download Optimized Resume</a>'
+        href = f'<a href="data:file/pdf;base64,{b64}" download="{filename}">⬇️ Download Optimized Resume</a>'
         st.markdown(href, unsafe_allow_html=True)
         
         # Preview with expander
@@ -222,9 +222,9 @@ with tab2:
         st.subheader("Generated Cover Letter", divider="green")
         
         # Download button
-        filename = f"{company.replace(' ', '_')}_cover_letter_{datetime.now().strftime('%Y%m%d')}.txt"
+        filename = f"{company.replace(' ', '_')}_cover_letter_{datetime.now().strftime('%Y%m%d')}.docx"
         b64 = base64.b64encode(st.session_state.cover_letter.encode()).decode()
-        href = f'<a href="data:file/txt;base64,{b64}" download="{filename}">⬇️ Download Cover Letter</a>'
+        href = f'<a href="data:file/docx;base64,{b64}" download="{filename}">⬇️ Download Cover Letter</a>'
         st.markdown(href, unsafe_allow_html=True)
         
         # Preview with expander
